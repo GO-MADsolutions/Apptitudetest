@@ -13610,3 +13610,64 @@ Processing by StaticPagesController#home as HTML
   Rendered static_pages/home.html.erb within layouts/application (1.4ms)
   Rendered static_pages/_header.html.erb (0.2ms)
 Completed 200 OK in 287ms (Views: 285.9ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-02 14:27:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (5.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (7.3ms)
+  Rendered static_pages/_header.html.erb (1.2ms)
+Completed 200 OK in 3354ms (Views: 3172.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ages" for 127.0.0.1 at 2016-06-02 14:27:56 +0530
+Processing by AgesController#index as HTML
+  Rendered ages/index.html.erb within layouts/application (11.5ms)
+  Rendered static_pages/_header.html.erb (0.9ms)
+Completed 200 OK in 197ms (Views: 194.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ages/problems" for 127.0.0.1 at 2016-06-02 14:27:58 +0530
+Processing by AgesController#problems as HTML
+  [1m[35mAge Load (0.6ms)[0m  SELECT  "ages".* FROM "ages" LIMIT 2 OFFSET 0
+  [1m[36m (6.8ms)[0m  [1mSELECT COUNT(*) FROM "ages"[0m
+  Rendered ages/problems.html.erb within layouts/application (199.2ms)
+  Rendered static_pages/_header.html.erb (0.4ms)
+Completed 200 OK in 368ms (Views: 342.9ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/ages/problems?page=2" for 127.0.0.1 at 2016-06-02 14:28:04 +0530
+Processing by AgesController#problems as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mAge Load (2.6ms)[0m  SELECT  "ages".* FROM "ages" LIMIT 2 OFFSET 2
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "ages"[0m
+  Rendered ages/problems.html.erb within layouts/application (10.0ms)
+  Rendered static_pages/_header.html.erb (0.4ms)
+Completed 200 OK in 167ms (Views: 153.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/ages/problems?page=3" for 127.0.0.1 at 2016-06-02 14:28:07 +0530
+Processing by AgesController#problems as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35mAge Load (0.4ms)[0m  SELECT  "ages".* FROM "ages" LIMIT 2 OFFSET 4
+  Rendered ages/problems.html.erb within layouts/application (3.8ms)
+  Rendered static_pages/_header.html.erb (0.3ms)
+Completed 200 OK in 171ms (Views: 159.5ms | ActiveRecord: 0.4ms)
