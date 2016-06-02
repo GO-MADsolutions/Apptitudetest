@@ -13671,3 +13671,45 @@ Processing by AgesController#problems as HTML
   Rendered ages/problems.html.erb within layouts/application (3.8ms)
   Rendered static_pages/_header.html.erb (0.3ms)
 Completed 200 OK in 171ms (Views: 159.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-02 16:16:55 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.8ms)
+  Rendered static_pages/_header.html.erb (1.0ms)
+Completed 200 OK in 760ms (Views: 736.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ages" for 127.0.0.1 at 2016-06-02 16:16:58 +0530
+Processing by AgesController#index as HTML
+  Rendered ages/index.html.erb within layouts/application (7.6ms)
+  Rendered static_pages/_header.html.erb (0.7ms)
+Completed 200 OK in 146ms (Views: 145.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ages/problems" for 127.0.0.1 at 2016-06-02 16:17:01 +0530
+Processing by AgesController#problems as HTML
+  [1m[35mAge Load (3.0ms)[0m  SELECT  "ages".* FROM "ages" LIMIT 2 OFFSET 0
+  [1m[36m (4.1ms)[0m  [1mSELECT COUNT(*) FROM "ages"[0m
+  Rendered ages/problems.html.erb within layouts/application (58.2ms)
+  Rendered static_pages/_header.html.erb (0.3ms)
+Completed 200 OK in 227ms (Views: 217.9ms | ActiveRecord: 7.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
